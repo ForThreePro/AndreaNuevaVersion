@@ -8,13 +8,14 @@ const react = async (conn, m, text) => {
 
 var handler = async (m, { conn, args }) => {
   if (!args[0]) {
-    let menuUso = `𐔌 ꒱ ***TIKTOK DOWNLOADER*** 𐔌 ꒱ 📱
+    let menuUso = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***TIKTOK DOWNLOADER*** 𐔌 ꒱ 📱
 
 .⃟𖥔 ݁. 𖦹˙— \`\`DESCARGAS\`\` —˙𖦹.📥꒷
 
 ── *📝 DESCRIPCIÓN* ╏
-📱 ➛ Descarga videos de TikTok sin marca de agua
-📱 ➛ Con botones interactivos
+🍓 ➛ Descarga videos de TikTok sin marca de agua
+🍓 ➛ Con botones interactivos
 
 ── *📖 USO* ╏
 ➛ Envía: <link de tiktok>
@@ -34,12 +35,13 @@ var handler = async (m, { conn, args }) => {
   const url = args[0]
   if (!url.match(/(https?:\/\/)?(www\.)?(vm\.|vt\.|www\.)?tiktok\.com\//)) {
     await react(conn, m, '❌')
-    let menuError = `𐔌 ꒱ ***TIKTOK DOWNLOADER*** 𐔌 ꒱ ⚠️
+    let menuError = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***TIKTOK DOWNLOADER*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷
 
 ── *📝 DESCRIPCIÓN* ╏
-❌ ➛ El enlace no es válido
+❌ ➛ El enlace no es válido pe 🍓
 
 ── *📖 USO* ╏
 ➛ Solo links de: *tiktok.com*
@@ -50,7 +52,8 @@ var handler = async (m, { conn, args }) => {
 
   try {
     await react(conn, m, "⏳")
-    await m.reply(`𐔌 ꒱ ***TIKTOK DOWNLOADER*** 𐔌 ꒱ ⏳
+    await m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***TIKTOK DOWNLOADER*** 𐔌 ꒱ ⏳
 
 .⃟𖥔 ݁. 𖦹˙— \`\`PROCESANDO\`\` —˙𖦹.⚙️꒷
 
@@ -62,7 +65,7 @@ var handler = async (m, { conn, args }) => {
 ━━━━━━━━━━━`)
 
     const tiktokData = await tiktokdl(url)
-    if (!tiktokData?.data) throw new Error('No se pudo obtener el video.')
+    if (!tiktokData?.data) throw new Error('No se pudo obtener el video pe 🍓')
 
     const videoURL = tiktokData.data.play
     const title = tiktokData.data.title || 'Sin título'
@@ -74,7 +77,7 @@ var handler = async (m, { conn, args }) => {
       key: { remoteJid: m.chat, participant: '0@s.whatsapp.net', fromMe: false },
       message: {
         locationMessage: {
-          name: `TikTok Downloader`,
+          name: `StrawBerry Bot`,
           jpegThumbnail: Buffer.from(await (await fetch('https://files.catbox.moe/dsgmid.jpg')).arrayBuffer())
         }
       }
@@ -87,7 +90,8 @@ var handler = async (m, { conn, args }) => {
         message: {
           interactiveMessage: proto.Message.InteractiveMessage.fromObject({
             body: {
-              text: `𐔌 ꒱ ***TIKTOK DOWNLOADER*** 𐔌 ꒱ ✅
+              text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***TIKTOK DOWNLOADER*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`COMPLETADO\`\` —˙𖦹.📥꒷
 
@@ -100,7 +104,7 @@ var handler = async (m, { conn, args }) => {
 ── *📥 DESCARGA* ╏
 ⬇️ ➛ Video sin marca de agua`
             },
-            footer: { text: 'Descarga sin marca de agua ✨' },
+            footer: { text: 'StrawBerry Bot - Descarga sin marca de agua 🍓✨' },
             header: { hasMediaAttachment: true, videoMessage: media.videoMessage },
             nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
               buttons: [
@@ -118,7 +122,8 @@ var handler = async (m, { conn, args }) => {
 
   } catch (error) {
     await react(conn, m, "❌")
-    let menuErr = `𐔌 ꒱ ***TIKTOK DOWNLOADER*** 𐔌 ꒱ ⚠️
+    let menuErr = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***TIKTOK DOWNLOADER*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷
 
@@ -126,7 +131,7 @@ var handler = async (m, { conn, args }) => {
 ❌ ➛ ${error.message}
 
 ── *💡 SOLUCIÓN* ╏
-🔧 ➛ Verifica que el video sea público
+🔧 ➛ Verifica que el video sea público pe
 🔧 ➛ Intenta con otro link
 
 ━━━━━━━━━━━`
