@@ -18,14 +18,15 @@ const handler = async (m, { conn, command }) => {
         let mime = (q.msg || q).mimetype || ''
 
         if (!mime ||!/audio|video/.test(mime)) {
-            let menuUso = `𐔌 ꒱ ***.${command}*** 𐔌 ꒱ 🎵
+            let menuUso = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.${command}*** 𐔌 ꒱ 🎵
 
 .⃟𖥔 ݁. 𖦹˙— \`\`BUSCADOR\`\` —˙𖦹.🔍꒷
 
 ── *📝 DESCRIPCIÓN* ╏
-🎵 ➛ Identifica canciones respondiendo a audios o videos
-🎵 ➛.song = Descarga el audio
-🎵 ➛.letra = Muestra la letra + descarga el audio
+🍓 ➛ Identifica canciones respondiendo a audios o videos
+🍓 ➛.song = Descarga el audio
+🍓 ➛.letra = Muestra la letra + descarga el audio
 
 ── *📖 USO* ╏
 1️⃣ ➛ Responde a un audio con:.*${command}*
@@ -41,9 +42,10 @@ const handler = async (m, { conn, command }) => {
 
         await m.react('🔍')
         let buffer = await q.download()
-        if (!buffer) throw new Error('Error al descargar el archivo')
+        if (!buffer) throw new Error('Error al descargar el archivo pe 🍓')
 
-        await m.reply(`𐔌 ꒱ ***.${command}*** 𐔌 ꒱ 🔍
+        await m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.${command}*** 𐔌 ꒱ 🔍
 
 .⃟𖥔 ݁. 𖦹˙— \`\`DETECTANDO\`\` —˙𖦹.🎶꒷
 
@@ -63,7 +65,7 @@ const handler = async (m, { conn, command }) => {
         await m.react('📥')
         let search = await yts(searchQuery)
         let result = search.videos[0]
-        if (!result) throw new Error('No se encontró la canción en YouTube')
+        if (!result) throw new Error('No se encontró la canción en YouTube pe 🍓')
 
         const { title, thumbnail, timestamp, views, videoId, author } = result
         const shortUrl = `https://youtu.be/${videoId}`
@@ -72,13 +74,14 @@ const handler = async (m, { conn, command }) => {
 
         // 3. DESCARGAR AUDIO
         const mediaUrl = await getMediaUrl(shortUrl)
-        if (!mediaUrl) throw new Error('No se pudo obtener el audio')
+        if (!mediaUrl) throw new Error('No se pudo obtener el audio pe 🍓')
 
         // ===== SI ES.song =====
         if(command === 'song'){
             await conn.sendMessage(m.chat, {
                 image: thumb,
-                caption: `𐔌 ꒱ ***.song*** 𐔌 ꒱ ✅
+                caption: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.song*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ENCONTRADO\`\` —˙𖦹.🎵꒷
 
@@ -106,11 +109,12 @@ const handler = async (m, { conn, command }) => {
         if(command === 'letra'){
             await m.react('📝')
             const lyricsRes = await fetch(`https://api.lyrics.ovh/v1/${encodeURIComponent(song.artist)}/${encodeURIComponent(song.title)}`).then(r => r.json())
-            let lyrics = lyricsRes.lyrics || 'No se encontró la letra'
+            let lyrics = lyricsRes.lyrics || 'No se encontró la letra pe 🍓'
             if(lyrics.length > 1500) lyrics = lyrics.slice(0, 1500) + '\n\n...Letra muy larga'
 
             await conn.sendMessage(m.chat, {
-                text: `𐔌 ꒱ ***.letra*** 𐔌 ꒱ 📝
+                text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.letra*** 𐔌 ꒱ 📝
 
 .⃟𖥔 ݁. 𖦹˙— \`\`LETRA\`\` —˙𖦹.🎤꒷
 
@@ -137,7 +141,8 @@ const handler = async (m, { conn, command }) => {
 
     } catch(e) {
         await m.react('❌')
-        let menuError = `𐔌 ꒱ ***.${command}*** 𐔌 ꒱ ⚠️
+        let menuError = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.${command}*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷
 
@@ -145,7 +150,7 @@ const handler = async (m, { conn, command }) => {
 ❌ ➛ ${e.message}
 
 ── *💡 SOLUCIÓN* ╏
-🔧 ➛ Usa un audio/video más claro
+🔧 ➛ Usa un audio/video más claro pe
 🔧 ➛ Asegúrate que tenga música con voz
 
 ━━━━━━━━━━━`
@@ -161,7 +166,7 @@ async function recognizeUrl(audioUrl) {
     body: JSON.stringify({ url: audioUrl, startTime: 0, recaptchaToken: crypto.randomBytes(24).toString('base64url') })
   })
   const json = await res.json()
-  if (!json?.success ||!json?.track) throw new Error('No se encontró la canción')
+  if (!json?.success ||!json?.track) throw new Error('No se encontró la canción pe 🍓')
   return json.track
 }
 
