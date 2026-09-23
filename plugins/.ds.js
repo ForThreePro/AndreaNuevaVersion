@@ -3,15 +3,15 @@ import path from 'path'
 
 var handler = async (m, { conn }) => {
     if (global.conn.user.jid !== conn.user.jid) {
-        return conn.reply(m.chat, '⚠️ *Usa esto en el número principal*', m)
+        return conn.reply(m.chat, '⚠️ *Usa esto en el número principal pe* 🍓', m)
     }
 
     let rutas = [`./Sesiones/Principal/`, `./sesiones/Principal/`, `./sessions/Principal/`]
     let sessionPath = rutas.find(r => existsSync(r))
 
-    if (!sessionPath) return m.reply('🧐 *No encontré la carpeta de sesión*')
+    if (!sessionPath) return m.reply('🧐 *No encontré la carpeta de sesión pe* 🍓')
 
-    await m.reply(`😴 *Limpiando archivos basura de sesión...*`)
+    await m.reply(`😴 *Limpiando archivos basura de sesión...* 🍓`)
 
     let files = await fs.readdir(sessionPath)
     let filesDeleted = 0
@@ -30,7 +30,7 @@ var handler = async (m, { conn }) => {
         }
     }
 
-    let menu = `𐔌 ꒱ ***.dsowner*** 𐔌 ꒱ 🧹
+    let menu = `𐔌 ꒱ ***STRAWBERRY BOT*** 𐔌 ꒱ 🍓
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FIX\`\` —˙𖦹.⚙️꒷
 
@@ -44,7 +44,7 @@ var handler = async (m, { conn }) => {
 
 ── *📊 RESULTADO* ╏
 ✅ ➛ Archivos eliminados: *${filesDeleted}*
-💎 ➛ Estado: *${filesDeleted === 0 ? 'Todo limpio' : 'Limpieza completada'}*
+💎 ➛ Estado: *${filesDeleted === 0 ? 'Todo limpio' : 'Limpieza completada'}* 🍓
 
 ━━━━━━━━━━━`
 
