@@ -8,7 +8,8 @@ let handler = async (m, { conn, command, participants }) => {
     let mentionedJid = m.mentionedJid[0]? m.mentionedJid[0] : m.quoted? m.quoted.sender : false
     if (!mentionedJid) {
         await react('❌')
-        let error = `𐔌 ꒱ ***SILENCIAR USUARIO*** 𐔌 ꒱ ⚠️
+        let error = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***SILENCIAR USUARIO*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FORMATO\`\` —˙𖦹.🔇꒷
 
@@ -27,27 +28,28 @@ let handler = async (m, { conn, command, participants }) => {
     let isUserAdmin = participants.find(p => p.id === mentionedJid)?.admin
     if (isUserAdmin) {
         await react('❌')
-        return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***SILENCIAR USUARIO*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n❌ ➛ No puedes silenciar a un administrador\n━━━━━━━━━━━` }, { quoted: m })
+        return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***SILENCIAR USUARIO*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n❌ ➛ No puedes silenciar a un administrador pe\n━━━━━━━━━━━` }, { quoted: m })
     }
     if (mentionedJid === conn.user.jid) {
         await react('❌')
-        return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***SILENCIAR USUARIO*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n❌ ➛ No puedo silenciarme a mí mismo\n━━━━━━━━━━━` }, { quoted: m })
+        return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***SILENCIAR USUARIO*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n❌ ➛ No puedo silenciarme a mí mismo pe\n━━━━━━━━━━━` }, { quoted: m })
     }
 
     if (command === "mute") {
         if (mutedUsers.has(mentionedJid)) {
             await react('⚠️')
-            return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***SILENCIAR USUARIO*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n⚠️ ➛ Este usuario ya está silenciado\n━━━━━━━━━━━` }, { quoted: m })
+            return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***SILENCIAR USUARIO*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n⚠️ ➛ Este usuario ya está silenciado pe\n━━━━━━━━━━━` }, { quoted: m })
         }
         mutedUsers.add(mentionedJid)
         await react('🔇')
 
-        let muteMsg = `𐔌 ꒱ ***SILENCIAR USUARIO*** 𐔌 ꒱ ✅
+        let muteMsg = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***SILENCIAR USUARIO*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`SILENCIADO\`\` —˙𖦹.🔇꒷
 
 ── *📊 INFORMACIÓN* ╏
-🔇 ➛ Usuario: @${mentionedJid.split('@')[0]}
+🔇 ➛ Usuario: @${mentionedJid.split('@')[0]} pe
 👑 ➛ Por: @${m.sender.split('@')[0]}
 
 ── *📝 NOTA* ╏
@@ -58,17 +60,18 @@ let handler = async (m, { conn, command, participants }) => {
     } else if (command === "unmute") {
         if (!mutedUsers.has(mentionedJid)) {
             await react('⚠️')
-            return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***SILENCIAR USUARIO*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n⚠️ ➛ Este usuario no está silenciado\n━━━━━━━━━━━` }, { quoted: m })
+            return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***SILENCIAR USUARIO*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n⚠️ ➛ Este usuario no está silenciado pe\n━━━━━━━━━━━` }, { quoted: m })
         }
         mutedUsers.delete(mentionedJid)
         await react('🔊')
 
-        let unmuteMsg = `𐔌 ꒱ ***SILENCIAR USUARIO*** 𐔌 ꒱ ✅
+        let unmuteMsg = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***SILENCIAR USUARIO*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`DESILENCIADO\`\` —˙𖦹.🔊꒷
 
 ── *📊 INFORMACIÓN* ╏
-🔊 ➛ Usuario: @${mentionedJid.split('@')[0]}
+🔊 ➛ Usuario: @${mentionedJid.split('@')[0]} pe
 👑 ➛ Por: @${m.sender.split('@')[0]}
 
 ── *📝 NOTA* ╏
