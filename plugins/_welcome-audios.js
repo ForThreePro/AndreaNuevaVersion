@@ -24,12 +24,13 @@ let handler = async (m, { conn, args }) => {
     if (mime && /audio/.test(mime)) {
       let buffer = await q.download()
       chat[`audio${type}`] = buffer
-      let ok = `𐔌 ꒱ ***AUDIO ${type.toUpperCase()}*** 𐔌 ꒱ ✅
+      let ok = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***AUDIO ${type.toUpperCase()}*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`GUARDADO\`\` —˙𖦹.🎵꒷
 
 ── *📊 INFORMACIÓN* ╏
-✅ ➛ Audio de *${type}* guardado
+✅ ➛ Audio de *${type}* guardado pe
 🔊 ➛ Se reproducirá cuando pase el evento
 
 ━━━━━━━━━━━`
@@ -39,12 +40,13 @@ let handler = async (m, { conn, args }) => {
     // Si manda un link
     if (args[0] && args[0].startsWith('http')) {
       chat[`audio${type}`] = args[0]
-      let ok = `𐔌 ꒱ ***AUDIO ${type.toUpperCase()}*** 𐔌 ꒱ ✅
+      let ok = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***AUDIO ${type.toUpperCase()}*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`GUARDADO\`\` —˙𖦹.🔗꒷
 
 ── *📊 INFORMACIÓN* ╏
-✅ ➛ Link de audio *${type}* guardado
+✅ ➛ Link de audio *${type}* guardado pe
 🔗 ➛ ${args[0]}
 
 ━━━━━━━━━━━`
@@ -52,7 +54,8 @@ let handler = async (m, { conn, args }) => {
     }
 
     await react('❌')
-    let uso = `𐔌 ꒱ ***AUDIO ${type.toUpperCase()}*** 𐔌 ꒱ 📝
+    let uso = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***AUDIO ${type.toUpperCase()}*** 𐔌 ꒱ 📝
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FORMATO\`\` —˙𖦹.🎵꒷
 
@@ -72,12 +75,13 @@ let handler = async (m, { conn, args }) => {
   if (textoCmd.includes('delaudio')) {
     if (!chat[`audio${type}`]) {
       await react('📭')
-      let vacio = `𐔌 ꒱ ***AUDIO ${type.toUpperCase()}*** 𐔌 ꒱ 📭
+      let vacio = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***AUDIO ${type.toUpperCase()}*** 𐔌 ꒱ 📭
 
 .⃟𖥔 ݁. 𖦹˙— \`\`NO CONFIGURADO\`\` —˙𖦹.❌꒷
 
 ── *📝 AVISO* ╏
-📭 ➛ No hay un audio de *${type}* configurado
+📭 ➛ No hay un audio de *${type}* configurado pe
 
 ━━━━━━━━━━━`
       return conn.sendMessage(m.chat, { text: vacio }, { quoted: m })
@@ -85,13 +89,14 @@ let handler = async (m, { conn, args }) => {
 
     delete chat[`audio${type}`]
     await react('🗑️')
-    let del = `𐔌 ꒱ ***AUDIO ${type.toUpperCase()}*** 𐔌 ꒱ ✅
+    let del = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***AUDIO ${type.toUpperCase()}*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ELIMINADO\`\` —˙𖦹.🗑️꒷
 
 ── *📊 INFORMACIÓN* ╏
 🗑️ ➛ Audio de *${type}* eliminado
-✅ ➛ Ya no se reproducirá
+✅ ➛ Ya no se reproducirá pe
 
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: del }, { quoted: m })
