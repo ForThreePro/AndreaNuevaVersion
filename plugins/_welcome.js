@@ -3,12 +3,13 @@ import fetch from 'node-fetch'
 
 const handler = async (m, { conn, args, isAdmin, isOwner }) => {
   if (!isAdmin &&!isOwner) {
-    let error = `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ ⚠️
+    let error = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***ACCESO DENEGADO*** 𐔌 ꒱ ⚠️
 
-.⃟𖥔 ݁. 𖦹˙— \`\`ACCESO DENEGADO\`\` —˙𖦹.🔒꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`PERMISOS\`\` —˙𖦹.🔒꒷
 
 ── *📝 AVISO* ╏
-🔒 ➛ Solo admins pueden usar este comando
+🔒 ➛ Solo admins pueden usar este comando pe
 
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: error }, { quoted: m })
@@ -24,12 +25,13 @@ const handler = async (m, { conn, args, isAdmin, isOwner }) => {
   if (/on/i.test(args[0])) {
     await react('🟢')
     chat.bienvenida = true
-    let ok = `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ ✅
+    let ok = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***BIENVENIDA*** 𐔌 ꒱ ✅
 
-.⃟𖥔 ݁. 𖦹˙— \`\`BIENVENIDA\`\` —˙𖦹.🟢꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`ESTADO\`\` —˙𖦹.🟢꒷
 
-── *📊 ESTADO* ╏
-🟢 ➛ Activada
+── *📊 INFORMACIÓN* ╏
+🟢 ➛ Activada pe
 🖼️ ➛ Con imagen personalizada
 
 ━━━━━━━━━━━`
@@ -37,18 +39,20 @@ const handler = async (m, { conn, args, isAdmin, isOwner }) => {
   } else if (/off/i.test(args[0])) {
     await react('🔴')
     chat.bienvenida = false
-    let off = `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ ✅
+    let off = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***BIENVENIDA*** 𐔌 ꒱ ✅
 
-.⃟𖥔 ݁. 𖦹˙— \`\`BIENVENIDA\`\` —˙𖦹.🔴꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`ESTADO\`\` —˙𖦹.🔴꒷
 
-── *📊 ESTADO* ╏
-🔴 ➛ Desactivada
+── *📊 INFORMACIÓN* ╏
+🔴 ➛ Desactivada pe
 
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: off }, { quoted: m })
   } else {
     await react('❌')
-    let uso = `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ 📝
+    let uso = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***BIENVENIDA*** 𐔌 ꒱ 📝
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FORMATO\`\` —˙𖦹.⚙️꒷
 
@@ -75,7 +79,7 @@ handler.before = async function (m, { conn, groupMetadata }) {
   const userJid = m.messageStubParameters?.[0] || m.participant
   if (!userJid) return!0
 
-  const DEFAULT_IMG = 'https://files.evogb.win/QFXQtu.jpg' // <-- TU FOTO NUEVA
+  const DEFAULT_IMG = 'https://files.evogb.win/iWTUtX.jpg'
   let imgBuffer = null
 
   // PASO 1: Intentar obtener foto del usuario
@@ -84,7 +88,7 @@ handler.before = async function (m, { conn, groupMetadata }) {
     let res = await fetch(userPP)
     imgBuffer = await res.buffer()
   } catch {
-    // PASO 2: Si falla, usar la foto que me diste
+    // PASO 2: Si falla, usar la foto por defecto
     try {
       let res = await fetch(DEFAULT_IMG)
       imgBuffer = await res.buffer()
@@ -104,9 +108,10 @@ handler.before = async function (m, { conn, groupMetadata }) {
     case WAMessageStubType.GROUP_PARTICIPANT_ADD:
       audio = chat.audiowelcome
       txt = chat.customWelcome? chat.customWelcome.replace(/@user/gi, userTag).replace(/@group/gi, groupName).replace(/@desc/gi, groupDesc) :
-`𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ 👋
+`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***BIENVENIDO*** 𐔌 ꒱ 👋
 
-.⃟𖥔 ݁. 𖦹˙— \`\`BIENVENIDO\`\` —˙𖦹.✨꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`NUEVO MIEMBRO\`\` —˙𖦹.✨꒷
 
 ── *📊 INFORMACIÓN* ╏
 👋 ➛ ${userTag} llegó a *${groupName}*
@@ -118,9 +123,10 @@ handler.before = async function (m, { conn, groupMetadata }) {
     case WAMessageStubType.GROUP_PARTICIPANT_LEAVE:
       audio = chat.audiobye
       txt = chat.customBye? chat.customBye.replace(/@user/gi, userTag).replace(/@group/gi, groupName) :
-`𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ 👋
+`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***SE FUE*** 𐔌 ꒱ 👋
 
-.⃟𖥔 ݁. 𖦹˙— \`\`SE FUE\`\` —˙𖦹.💤꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`DESPEDIDA\`\` —˙𖦹.💤꒷
 
 ── *📊 INFORMACIÓN* ╏
 💤 ➛ ${userTag} salió de *${groupName}*
@@ -132,9 +138,10 @@ handler.before = async function (m, { conn, groupMetadata }) {
     case WAMessageStubType.GROUP_PARTICIPANT_REMOVE:
       audio = chat.audiokick
       txt = chat.customKick? chat.customKick.replace(/@user/gi, userTag).replace(/@group/gi, groupName) :
-`𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ ⚠️
+`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***EXPULSADO*** 𐔌 ꒱ ⚠️
 
-.⃟𖥔 ݁. 𖦹˙— \`\`EXPULSADO\`\` —˙𖦹.🥊꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`KICK\`\` —˙𖦹.🥊꒷
 
 ── *📊 INFORMACIÓN* ╏
 🥊 ➛ ${userTag} fue expulsado de *${groupName}*
