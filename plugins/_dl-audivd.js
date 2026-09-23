@@ -15,13 +15,14 @@ const handler = async (m, { conn }) => {
     const mime = (q.msg || q).mimetype || ''
 
     if (!/video/.test(mime)) {
-        let menuUso = `𐔌 ꒱ ***.audivd*** 𐔌 ꒱ 🎵
+        let menuUso = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.audivd*** 𐔌 ꒱ 🎵
 
 .⃟𖥔 ݁. 𖦹˙— \`\`HERRAMIENTA\`\` —˙𖦹.⚙️꒷
 
 ── *📝 DESCRIPCIÓN* ╏
-🎵 ➛ Extrae el audio de un video
-🎵 ➛ Convierte a MP3 192kbps
+🍓 ➛ Extrae el audio de un video
+🍓 ➛ Convierte a MP3 192kbps
 
 ── *📖 USO* ╏
 1️⃣ ➛ Responde a un video con:.*audivd*
@@ -38,7 +39,8 @@ const handler = async (m, { conn }) => {
     let tempAudio
     try {
         await react(conn, m, "⏳")
-        await m.reply(`𐔌 ꒱ ***.audivd*** 𐔌 ꒱ ⏳
+        await m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.audivd*** 𐔌 ꒱ ⏳
 
 .⃟𖥔 ݁. 𖦹˙— \`\`PROCESANDO\`\` —˙𖦹.⚙️꒷
 
@@ -50,7 +52,7 @@ const handler = async (m, { conn }) => {
 ━━━━━━━━━━━`)
 
         const videoBuffer = await q.download()
-        if (!videoBuffer) throw new Error('No se pudo obtener el buffer del video.')
+        if (!videoBuffer) throw new Error('No se pudo obtener el buffer del video pe 🍓')
 
         const tempDir = join(process.cwd(), './tmp')
         await fs.stat(tempDir).catch(() => fs.mkdir(tempDir, { recursive: true }))
@@ -80,7 +82,8 @@ const handler = async (m, { conn }) => {
         }, { quoted: m })
 
         await react(conn, m, "✅")
-        let menuOk = `𐔌 ꒱ ***.audivd*** 𐔌 ꒱ ✅
+        let menuOk = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.audivd*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`COMPLETADO\`\` —˙𖦹.🎵꒷
 
@@ -98,7 +101,8 @@ const handler = async (m, { conn }) => {
     } catch (e) {
         console.error(e)
         await react(conn, m, "❌")
-        let menuErr = `𐔌 ꒱ ***.audivd*** 𐔌 ꒱ ⚠️
+        let menuErr = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.audivd*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷
 
@@ -106,7 +110,7 @@ const handler = async (m, { conn }) => {
 ❌ ➛ ${e.message}
 
 ── *💡 SOLUCIÓN* ╏
-🔧 ➛ Usa un video válido
+🔧 ➛ Usa un video válido pe
 🔧 ➛ Máx 2 minutos recomendado
 
 ━━━━━━━━━━━`
