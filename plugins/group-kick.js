@@ -7,7 +7,8 @@ let handler = async (m, { conn, participants }) => {
 
     if (!mentionedJid) {
         await react('❌')
-        let error = `𐔌 ꒱ ***EXPULSAR USUARIO*** 𐔌 ꒱ ⚠️
+        let error = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***EXPULSAR USUARIO*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FORMATO\`\` —˙𖦹.👢꒷
 
@@ -16,7 +17,7 @@ let handler = async (m, { conn, participants }) => {
 ➛ Responde al mensaje del usuario
 
 ── *📝 AVISO* ╏
-🔒 ➛ Solo admins
+🔒 ➛ Solo admins pe
 
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: error }, { quoted: m })
@@ -32,42 +33,44 @@ let handler = async (m, { conn, participants }) => {
 
         if (mentionedJid === conn.user.jid) {
             await react('❌')
-            return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***EXPULSAR USUARIO*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n❌ ➛ No puedo eliminarme a mí mismo\n━━━━━━━━━━━` }, { quoted: m })
+            return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***EXPULSAR USUARIO*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n❌ ➛ No puedo eliminarme a mí mismo pe\n━━━━━━━━━━━` }, { quoted: m })
         }
         if (mentionedJid === ownerGroup) {
             await react('❌')
-            return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***EXPULSAR USUARIO*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n❌ ➛ No puedo expulsar al propietario del grupo\n━━━━━━━━━━━` }, { quoted: m })
+            return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***EXPULSAR USUARIO*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n❌ ➛ No puedo expulsar al propietario del grupo pe\n━━━━━━━━━━━` }, { quoted: m })
         }
         if (mentionedJid === ownerBot) {
             await react('❌')
-            return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***EXPULSAR USUARIO*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n❌ ➛ No puedo expulsar al dueño del bot\n━━━━━━━━━━━` }, { quoted: m })
+            return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***EXPULSAR USUARIO*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n❌ ➛ No puedo expulsar al dueño del bot pe\n━━━━━━━━━━━` }, { quoted: m })
         }
         if (isAdmin) {
             await react('❌')
-            return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***EXPULSAR USUARIO*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n❌ ➛ No puedo expulsar a un administrador\n━━━━━━━━━━━` }, { quoted: m })
+            return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***EXPULSAR USUARIO*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n❌ ➛ No puedo expulsar a un administrador pe\n━━━━━━━━━━━` }, { quoted: m })
         }
 
         await react('👢')
         await conn.groupParticipantsUpdate(m.chat, [mentionedJid], 'remove')
 
-        let kickMsg = `𐔌 ꒱ ***EXPULSAR USUARIO*** 𐔌 ꒱ ✅
+        let kickMsg = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***EXPULSAR USUARIO*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`EXPULSADO\`\` —˙𖦹.👢꒷
 
 ── *📊 INFORMACIÓN* ╏
-👢 ➛ Usuario: @${mentionedJid.split('@')[0]}
+👢 ➛ Usuario: @${mentionedJid.split('@')[0]} pe
 👑 ➛ Por: @${m.sender.split('@')[0]}
 
 ━━━━━━━━━━━`
         conn.sendMessage(m.chat, { text: kickMsg, mentions: [mentionedJid, m.sender] }, { quoted: m })
     } catch (e) {
         await react('❌')
-        let error = `𐔌 ꒱ ***EXPULSAR USUARIO*** 𐔌 ꒱ ⚠️
+        let error = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***EXPULSAR USUARIO*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷
 
 ── *📝 AVISO* ╏
-❌ ➛ Se ha producido un problema
+❌ ➛ Se ha producido un problema pe
 🔧 ➛ ${e.message}
 
 ━━━━━━━━━━━`
