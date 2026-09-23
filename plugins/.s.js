@@ -29,13 +29,14 @@ let handler = async (m, { conn, text, command }) => {
             contenido = contenido.join(' ')
 
             if (!nombre) {
-                let menu = `𐔌 ꒱ ***.set*** 𐔌 ꒱ 📌
+                let menu = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.set*** 𐔌 ꒱ 📌
 
 .⃟𖥔 ݁. 𖦹˙— \`\`HERRAMIENTA\`\` —˙𖦹.💾꒷
 
 ── *📝 DESCRIPCIÓN* ╏
-💾 ➛ Guarda textos, imágenes, videos, audios y stickers
-💾 ➛ Para usarlos después con.nombre
+🍓 ➛ Guarda textos, imágenes, videos, audios y stickers
+🍓 ➛ Para usarlos después con.nombre
 
 ── *📖 USO* ╏
 1️⃣ ➛ *Texto:*.set nombre Tu texto aquí
@@ -54,8 +55,8 @@ let handler = async (m, { conn, text, command }) => {
                 return conn.sendMessage(m.chat, { text: menu }, { quoted: m })
             }
 
-            if (nombre.length < 2) return m.reply('⚠️ Nombre muy corto')
-            if (['set','del','listset'].includes(nombre)) return m.reply('⚠️ Nombre reservado')
+            if (nombre.length < 2) return m.reply('🍓 ⚠️ Nombre muy corto pe')
+            if (['set','del','listset'].includes(nombre)) return m.reply('🍓 ⚠️ Nombre reservado pe')
 
             let quoted = m.quoted
             let type = 'text'
@@ -63,21 +64,21 @@ let handler = async (m, { conn, text, command }) => {
 
             if (quoted) {
                 let buf = await quoted.download().catch(() => null)
-                if (!buf || buf.length < 100) return m.reply('❌ Archivo corrupto')
+                if (!buf || buf.length < 100) return m.reply('🍓 ❌ Archivo corrupto pe')
 
                 if (quoted.mtype === 'imageMessage') {
                     type = 'image'
-                    if (buf.length > 15*1024*1024) return m.reply('⚠️ Imagen muy pesada. Max 15MB')
+                    if (buf.length > 15*1024*1024) return m.reply('🍓 ⚠️ Imagen muy pesada. Max 15MB pe')
                     dataToSave = { content: buf.toString('base64') }
                 }
                 else if (quoted.mtype === 'videoMessage') {
                     type = 'video'
-                    if (buf.length > 15*1024*1024) return m.reply('⚠️ Video muy pesado. Max 15MB')
+                    if (buf.length > 15*1024*1024) return m.reply('🍓 ⚠️ Video muy pesado. Max 15MB pe')
                     dataToSave = { content: buf.toString('base64') }
                 }
                 else if (quoted.mtype === 'audioMessage') {
                     type = 'audio'
-                    if (buf.length > 10*1024*1024) return m.reply('⚠️ Audio muy pesado. Max 10MB')
+                    if (buf.length > 10*1024*1024) return m.reply('🍓 ⚠️ Audio muy pesado. Max 10MB pe')
                     dataToSave = { content: buf.toString('base64') }
                 }
                 else if (quoted.mtype === 'stickerMessage') {
@@ -87,12 +88,12 @@ let handler = async (m, { conn, text, command }) => {
                 else if (quoted.mtype === 'documentMessage') {
                     type = 'document'
                     dataToSave = { content: buf.toString('base64'), fileName: quoted.msg.fileName || 'archivo' }
-                } else return m.reply('❌ Tipo no soportado')
+                } else return m.reply('🍓 ❌ Tipo no soportado pe')
 
                 dataToSave.caption = contenido.slice(0,1024) || ''
             } else {
-                if (!contenido) return m.reply('⚠️ Falta el texto')
-                if (contenido.length > 4000) return m.reply('⚠️ Texto muy largo. Max 4000')
+                if (!contenido) return m.reply('🍓 ⚠️ Falta el texto pe')
+                if (contenido.length > 4000) return m.reply('🍓 ⚠️ Texto muy largo. Max 4000 pe')
                 dataToSave = { content: contenido }
             }
 
@@ -101,7 +102,8 @@ let handler = async (m, { conn, text, command }) => {
             await conn.sendMessage(m.chat, { react: { text: '✅', key: m.key } })
 
             let size = dataToSave.content? formatBytes(Buffer.from(dataToSave.content,'base64').length) : formatBytes(contenido.length)
-            let menuOk = `𐔌 ꒱ ***.set*** 𐔌 ꒱ ✅
+            let menuOk = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.set*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`CREADO\`\` —˙𖦹.💎꒷
 
@@ -123,7 +125,8 @@ ${emojiType[type]} ➛ Tipo: *${type.toUpperCase()}*
             let nombre = text?.toLowerCase().replace(/[^a-z0-9_]/g, '')
             if (!nombre ||!db[chatId][nombre]) {
                 await conn.sendMessage(m.chat, { react: { text: '❌', key: m.key } })
-                let menuDel = `𐔌 ꒱ ***.del*** 𐔌 ꒱ 🗑️
+                let menuDel = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.del*** 𐔌 ꒱ 🗑️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`HERRAMIENTA\`\` —˙𖦹.❌꒷
 
@@ -134,7 +137,7 @@ ${emojiType[type]} ➛ Tipo: *${type.toUpperCase()}*
 ➛.del nombre
 
 ── *📊 RESULTADO* ╏
-❌ ➛ Ese comando no existe
+❌ ➛ Ese comando no existe pe
 
 ━━━━━━━━━━━`
                 return conn.sendMessage(m.chat, { text: menuDel }, { quoted: m })
@@ -142,7 +145,8 @@ ${emojiType[type]} ➛ Tipo: *${type.toUpperCase()}*
             delete db[chatId][nombre]
             saveDB(db)
             await conn.sendMessage(m.chat, { react: { text: '🗑️', key: m.key } })
-            let menuDelOk = `𐔌 ꒱ ***.del*** 𐔌 ꒱ ✅
+            let menuDelOk = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.del*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ELIMINADO\`\` —˙𖦹.🗑️꒷
 
@@ -157,18 +161,20 @@ ${emojiType[type]} ➛ Tipo: *${type.toUpperCase()}*
         if (command === 'listset') {
             let lista = Object.keys(db[chatId])
             if (lista.length === 0) {
-                let menuVacio = `𐔌 ꒱ ***.listset*** 𐔌 ꒱ 📭
+                let menuVacio = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.listset*** 𐔌 ꒱ 📭
 
 .⃟𖥔 ݁. 𖦹˙— \`\`LISTA\`\` —˙𖦹.📋꒷
 
 ── *📊 RESULTADO* ╏
-📭 ➛ No hay comandos guardados en este grupo
+📭 ➛ No hay comandos guardados en este grupo pe
 
 ━━━━━━━━━━━`
                 return conn.sendMessage(m.chat, { text: menuVacio }, { quoted: m })
             }
 
-            let txt = `𐔌 ꒱ ***.listset*** 𐔌 ꒱ 📋
+            let txt = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.listset*** 𐔌 ꒱ 📋
 
 .⃟𖥔 ݁. 𖦹˙— \`\`LISTA\`\` —˙𖦹.📋꒷
 
@@ -177,11 +183,11 @@ ${emojiType[type]} ➛ Tipo: *${type.toUpperCase()}*
 
 ── *📜 COMANDOS* ╏\n`
             lista.forEach((v,i) => {
-                txt += `${i+1} ➛.*${v}* ${emojiType[db[chatId][v].type]} [${db[chatId][v].type}]\n`
+                txt += `${i+1} ➛. *${v}* ${emojiType[db[chatId][v].type]} [${db[chatId][v].type}]\n`
             })
             txt += `
 ── *📖 USO* ╏
-➛ Usa.*nombre* para ejecutar
+➛ Usa.nombre para ejecutar
 
 ━━━━━━━━━━━`
             await conn.sendMessage(m.chat, { react: { text: '📋', key: m.key } })
@@ -191,7 +197,7 @@ ${emojiType[type]} ➛ Tipo: *${type.toUpperCase()}*
     } catch (e) {
         console.log('[SET ERROR]', e)
         await conn.sendMessage(m.chat, { react: { text: '❌', key: m.key } })
-        return m.reply('❌ Error interno del bot')
+        return m.reply('🍓 ❌ Error interno del bot pe')
     }
 }
 
@@ -208,9 +214,9 @@ handler.before = async (m, { conn }) => {
         await conn.sendMessage(m.chat, { react: { text: emojiType[data.type], key: m.key } })
         const buffer = data.content? Buffer.from(data.content,'base64') : null
 
-        if (data.type === 'text') return await conn.reply(chatId, `*${data.content}*`, m)
-        if (data.type === 'image' && buffer) await conn.sendMessage(chatId, { image: buffer, caption: `📌 *${cmd.toUpperCase()}*\n\n${data.caption || ''}` }, { quoted: m })
-        if (data.type === 'video' && buffer) await conn.sendMessage(chatId, { video: buffer, caption: `📌 *${cmd.toUpperCase()}*\n\n${data.caption || ''}` }, { quoted: m })
+        if (data.type === 'text') return await conn.reply(chatId, `🍓 *${data.content}*`, m)
+        if (data.type === 'image' && buffer) await conn.sendMessage(chatId, { image: buffer, caption: `🍓 📌 *${cmd.toUpperCase()}*\n\n${data.caption || ''}` }, { quoted: m })
+        if (data.type === 'video' && buffer) await conn.sendMessage(chatId, { video: buffer, caption: `🍓 📌 *${cmd.toUpperCase()}*\n\n${data.caption || ''}` }, { quoted: m })
         if (data.type === 'audio' && buffer) await conn.sendMessage(chatId, { audio: buffer, mimetype: 'audio/ogg; codecs=opus', ptt: true }, { quoted: m })
         if (data.type === 'sticker' && buffer) await conn.sendMessage(chatId, { sticker: buffer }, { quoted: m })
         if (data.type === 'document' && buffer) await conn.sendMessage(chatId, { document: buffer, fileName: data.fileName, caption: data.caption }, { quoted: m })
