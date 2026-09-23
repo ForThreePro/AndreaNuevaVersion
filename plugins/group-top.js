@@ -9,12 +9,13 @@ function handler(m, { groupMetadata, command, conn, text }) {
     }
 
     if (!groupMetadata) {
-        return m.reply(`𐔌 ꒱ ***TOP 10*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n❌ ➛ Este comando solo funciona en grupos\n━━━━━━━━━━━`)
+        return m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***TOP 10*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n❌ ➛ Este comando solo funciona en grupos pe\n━━━━━━━━━━━`)
     }
 
     if (!text) {
         await react('❌')
-        let error = `𐔌 ꒱ ***TOP 10*** 𐔌 ꒱ ⚠️
+        let error = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***TOP 10*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FORMATO\`\` —˙𖦹.🏆꒷
 
@@ -22,7 +23,7 @@ function handler(m, { groupMetadata, command, conn, text }) {
 ➛ top <motivo del ranking>
 
 ── *💡 EJEMPLOS* ╏
-➛ top Mejores en PVP
+➛ top Mejores en PVP pe
 ➛ top Más activos
 ➛ top Más tóxicos
 
@@ -33,7 +34,7 @@ function handler(m, { groupMetadata, command, conn, text }) {
     let ps = groupMetadata.participants.map(v => v.id)
     if (ps.length < 10) {
         await react('⚠️')
-        return m.reply(`𐔌 ꒱ ***TOP 10*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n⚠️ ➛ Se necesitan mínimo 10 miembros en el grupo\n━━━━━━━━━━━`)
+        return m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***TOP 10*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n⚠️ ➛ Se necesitan mínimo 10 miembros en el grupo pe\n━━━━━━━━━━━`)
     }
 
     let a = ps.getRandom()
@@ -48,12 +49,13 @@ function handler(m, { groupMetadata, command, conn, text }) {
     let j = ps.getRandom()
     let k = Math.floor(Math.random() * 70)
 
-    let emojis = ['🐱','🍕','💤','😼','🙄','😂','👀','🔥','🤑','💩','🥱','😎','😅','👇🏻','😔','🌚','🗿','✨','❤️']
+    let emojis = ['🍓','🩷','💖','✨','🍰','🧁','💅','🌸','😼','🔥','🤑','💩','🥱','😎','😅','🌚','🗿','✨','❤️']
     let x = pickRandom(emojis)
 
     let vn = `https://hansxd.nasihosting.com/sound/sound${k}.mp3`
 
-    let top = `𐔌 ꒱ ***TOP 10*** 𐔌 ꒱ 🏆
+    let top = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***TOP 10*** 𐔌 ꒱ 🏆
 
 .⃟𖥔 ݁. 𖦹˙— \`\`${text.toUpperCase()}\`\` —˙𖦹.${x}꒷
 
@@ -70,7 +72,7 @@ ${x} *9.* ${user(i)}
 ${x} *10.* ${user(j)}
 
 ── *📝 NOTA* ╏
-🎲 ➛ Ranking 100% aleatorio y divertido
+🎲 ➛ Ranking 100% aleatorio y divertido pe
 
 ━━━━━━━━━━━`
 
