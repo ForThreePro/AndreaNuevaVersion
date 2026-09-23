@@ -9,13 +9,14 @@ const react = async (conn, m, text) => {
 const handler = async (m, { conn, text, usedPrefix, command }) => {
     try {
         if (!text.trim()) {
-            let menuUso = `𐔌 ꒱ ***.${command}*** 𐔌 ꒱ 🎵
+            let menuUso = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.${command}*** 𐔌 ꒱ 🎵
 
 .⃟𖥔 ݁. 𖦹˙— \`\`DESCARGAS\`\` —˙𖦹.📥꒷
 
 ── *📝 DESCRIPCIÓN* ╏
-🎵 ➛ Busca y descarga música de YouTube
-🎵 ➛ Envía el audio en MP3
+🍓 ➛ Busca y descarga música de YouTube
+🍓 ➛ Envía el audio en MP3
 
 ── *📖 USO* ╏
 ➛.*${command}* <nombre de canción>
@@ -33,7 +34,8 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
         }
 
         await react(conn, m, '🔍')
-        await m.reply(`𐔌 ꒱ ***.${command}*** 𐔌 ꒱ ⏳
+        await m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.${command}*** 𐔌 ꒱ ⏳
 
 .⃟𖥔 ݁. 𖦹˙— \`\`BUSCANDO\`\` —˙𖦹.🔍꒷
 
@@ -48,10 +50,10 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
         const query = videoMatch? 'https://youtu.be/' + videoMatch[1] : text
         const search = await yts(query)
         const result = videoMatch? search.videos.find(v => v.videoId === videoMatch[1]) || search.all[0] : search.all[0]
-        if (!result) throw new Error('No se encontraron resultados.')
+        if (!result) throw new Error('No se encontraron resultados pe 🍓')
 
         const { title, thumbnail, timestamp, views, videoId, author, seconds } = result
-        if (seconds > 1800) throw new Error('El contenido supera el límite de duración de 30 minutos.')
+        if (seconds > 1800) throw new Error('El contenido supera el límite de duración de 30 minutos pe 🍓')
 
         const vistas = formatViews(views)
         const canal = author.name
@@ -62,7 +64,8 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
         const [_, mediaUrl] = await Promise.all([
             conn.sendMessage(m.chat, {
                 image: thumb,
-                caption: `𐔌 ꒱ ***.${command}*** 𐔌 ꒱ ✅
+                caption: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.${command}*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ENCONTRADO\`\` —˙𖦹.🎵꒷
 
@@ -81,7 +84,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
             getMediaUrl(shortUrl)
         ])
 
-        if (!mediaUrl) throw new Error('No se pudo obtener el audio.')
+        if (!mediaUrl) throw new Error('No se pudo obtener el audio pe 🍓')
 
         await react(conn, m, '📥')
         await conn.sendMessage(m.chat, {
@@ -94,7 +97,8 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
 
     } catch (e) {
         await react(conn, m, '❌')
-        let menuErr = `𐔌 ꒱ ***.${command}*** 𐔌 ꒱ ⚠️
+        let menuErr = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.${command}*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷
 
@@ -102,7 +106,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
 ❌ ➛ ${e.message}
 
 ── *💡 SOLUCIÓN* ╏
-🔧 ➛ Usa un nombre o link válido
+🔧 ➛ Usa un nombre o link válido pe
 🔧 ➛ Máx 30 minutos de duración
 
 ━━━━━━━━━━━`
