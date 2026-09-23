@@ -1,7 +1,7 @@
 import os from 'os'
 
-// TU IMAGEN FIJA
-const GARFIELD_IMG = 'https://files.evogb.win/QFXQtu.jpg'
+// IMAGEN STRAWBERRY
+const STRAWBERRY_IMG = 'https://files.evogb.win/iWTUtX.jpg'
 
 let handler = async (m, { conn, usedPrefix }) => {
   const react = async (text) => {
@@ -11,14 +11,14 @@ let handler = async (m, { conn, usedPrefix }) => {
   await react('⏳')
 
   let taguser = m.mentionedJid && m.mentionedJid[0]? m.mentionedJid[0] : m.quoted? m.quoted.sender : m.sender
-  let img = { url: GARFIELD_IMG }
+  let img = { url: STRAWBERRY_IMG }
 
   let uptime = process.uptime() * 1000
   let _uptime = clockString(uptime)
   let totalreg = Object.keys(global.db.data.users).length
   let totalcmd = Object.values(global.plugins).filter(p => p.help &&!p.disabled).length
 
-  let owner = global.owner?.[0]?.[0] || '51927174369'
+  let owner = '573215829404'
   let ownerTag = `@${owner}`
   let numBot = conn.user.jid.split('@')[0]
 
@@ -31,7 +31,6 @@ let handler = async (m, { conn, usedPrefix }) => {
     else groups[category].push(plugin.help)
   }
 
-  // ICONOS POR CATEGORIA - YA NO TODO 📂
   const icons = {
     search: '🔍', download: '⬇️', game: '🎮', rpg: '⚔️', config: '⚙️',
     group: '👥', owner: '👑', info: 'ℹ️', fun: '😂', anime: '🌸',
@@ -48,13 +47,14 @@ let handler = async (m, { conn, usedPrefix }) => {
   let fecha = new Date().toLocaleDateString('es-PE', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/Lima'})
   let hora = new Date().toLocaleTimeString('es-PE', {hour: '2-digit', minute: '2-digit', timeZone: 'America/Lima'})
 
-  let menu = `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ 🍕
+  let menu = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***MENÚ PRINCIPAL*** 𐔌 ꒱ 🍓
 
-.⃟𖥔 ݁. 𖦹˙— \`\`MENÚ PRINCIPAL\`\` —˙𖦹.🍕꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`STRAWBERRY MENU\`\` —˙𖦹.🍓꒷
 
 ── *👤 PERFIL* ╏
-👤 ➛ Usuario: @${taguser.split('@')[0]}
-👑 ➛ Owner: ${ownerTag}
+👤 ➛ Usuario: @${taguser.split('@')[0]} pe
+👑 ➛ Owner: ${ownerTag} - Andreitap'
 📱 ➛ Bot: +${numBot}
 
 ── *📊 ESTADÍSTICAS* ╏
@@ -71,7 +71,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 `
 
   for (let category in groups) {
-    let icon = icons[category] || '📁' // Ahora cada categoria tiene su icono
+    let icon = icons[category] || '🍓'
     let catName = categoryNames[category] || category.toUpperCase()
     menu += `\n.⃟𖥔 ݁. 𖦹˙— \`\`${catName}\`\` —˙𖦹.${icon}꒷\n`
     for (let cmd of groups[category]) {
@@ -81,16 +81,16 @@ let handler = async (m, { conn, usedPrefix }) => {
 
   menu += `
 ── *📝 AYUDA* ╏
-💡 ➛ Usa ${usedPrefix} antes de cada comando
+💡 ➛ Usa ${usedPrefix} antes de cada comando pe
 💡 ➛ Ejemplo: ${usedPrefix}sticker
-> _"Mejorando como lasaña"_ 😼
+> _"Dulce como fresita"_ 🍓
 
 ━━━━━━━━━━━`
 
   await conn.sendMessage(m.chat, {
     image: img,
     caption: menu,
-    mentions: [taguser, owner]
+    mentions: [taguser, owner + '@s.whatsapp.net']
   }, { quoted: m })
 
   await react('✅')
