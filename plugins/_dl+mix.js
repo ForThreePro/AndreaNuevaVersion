@@ -23,21 +23,21 @@ async function uploadToUguu(buffer, mime) {
     timeout: 30000
   })
   const url = res.data?.files?.[0]?.url
-  if (!url) throw new Error('No se pudo subir a Uguu')
+  if (!url) throw new Error('No se pudo subir a Uguu pe 🍓')
   return url
 }
 
 async function upscaleImage(url) {
   const apiUrl = `${api.url}/tools/upscale?url=${encodeURIComponent(url)}&key=${api.key}`
   const res = await axios.get(apiUrl, { responseType: 'arraybuffer', timeout: 60000 })
-  if (!res.data) throw new Error('Stellar HD no devolvió imagen')
+  if (!res.data) throw new Error('Stellar HD no devolvió imagen pe 🍓')
   return Buffer.from(res.data)
 }
 
 async function removeBgFromUrl(url) {
   const apiUrl = `${api.url}/tools/removebg?url=${encodeURIComponent(url)}&key=${api.key}`
   const res = await axios.get(apiUrl, { responseType: 'arraybuffer', timeout: 60000 })
-  if (!res.data) throw new Error('Stellar RemoveBG no devolvió imagen')
+  if (!res.data) throw new Error('Stellar RemoveBG no devolvió imagen pe 🍓')
   return Buffer.from(res.data)
 }
 
@@ -46,13 +46,14 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     const mime = (q.msg || q).mimetype || ''
 
     if (!mime) {
-        let menuUso = `𐔌 ꒱ ***.${command}*** 𐔌 ꒱ 🖼️
+        let menuUso = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.${command}*** 𐔌 ꒱ 🖼️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`IA\`\` —˙𖦹.✨꒷
 
 ── *📝 DESCRIPCIÓN* ╏
-🖼️ ➛ Mejora la calidad de una imagen a HD 2x
-🖼️ ➛ Elimina el fondo automáticamente
+🍓 ➛ Mejora la calidad de una imagen a HD 2x
+🍓 ➛ Elimina el fondo automáticamente
 
 ── *📖 USO* ╏
 1️⃣ ➛ Responde a una imagen con:.*${command}*
@@ -68,12 +69,13 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     }
 
     if (!/image\/(jpe?g|png)/.test(mime)) {
-        let menuError = `𐔌 ꒱ ***.${command}*** 𐔌 ꒱ ⚠️
+        let menuError = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.${command}*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷
 
 ── *📝 DESCRIPCIÓN* ╏
-❌ ➛ Solo se aceptan imágenes JPG/PNG
+❌ ➛ Solo se aceptan imágenes JPG/PNG pe 🍓
 
 ── *📖 USO* ╏
 ➛ Responde a una imagen con:.*${command}*
@@ -84,7 +86,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
     try {
         await m.react('⏳')
-        await m.reply(`𐔌 ꒱ ***.${command}*** 𐔌 ꒱ ⏳
+        await m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.${command}*** 𐔌 ꒱ ⏳
 
 .⃟𖥔 ݁. 𖦹˙— \`\`PROCESANDO\`\` —˙𖦹.⚙️꒷
 
@@ -105,7 +108,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
         // Mensaje 1: Imagen
         await conn.sendMessage(m.chat, {
             image: finalBuffer,
-            caption: `𐔌 ꒱ ***.${command}*** 𐔌 ꒱ ✅
+            caption: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.${command}*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`COMPLETADO\`\` —˙𖦹.✨꒷
 
@@ -125,7 +129,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
             document: finalBuffer,
             fileName: 'image-nobg.png',
             mimetype: 'image/png',
-            caption: `𐔌 ꒱ ***.${command}*** 𐔌 ꒱ 📄
+            caption: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.${command}*** 𐔌 ꒱ 📄
 
 .⃟𖥔 ݁. 𖦹˙— \`\`DOCUMENTO\`\` —˙𖦹.📄꒷
 
@@ -140,7 +145,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
     } catch (err) {
         await m.react('❌')
-        let menuErr = `𐔌 ꒱ ***.${command}*** 𐔌 ꒱ ⚠️
+        let menuErr = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.${command}*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷
 
@@ -148,7 +154,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 ❌ ➛ ${err.message || err}
 
 ── *💡 SOLUCIÓN* ╏
-🔧 ➛ Usa una imagen clara JPG/PNG
+🔧 ➛ Usa una imagen clara JPG/PNG pe
 🔧 ➛ Máx 10MB recomendado
 
 ━━━━━━━━━━━`
