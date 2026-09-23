@@ -12,17 +12,19 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 
     // OWNER
     if (command === 'owner' || command === 'creator') {
-        let owner = '51927174369@s.whatsapp.net'
-        let texto = `𐔌 ꒱ ***OWNER*** 𐔌 ꒱ ✅
+        let owner = '573215829404@s.whatsapp.net'
+        let texto = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***OWNER*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`INFORMACIÓN\`\` —˙𖦹.👑꒷
 
 ── *📊 CONTACTO* ╏
-👑 ➛ Owner: @${owner.split('@')[0]}
-📱 ➛ Número: +51 927 174 369
+👑 ➛ Owner: @${owner.split('@')[0]} pe
+📱 ➛ Número: +57 321 5829404
 
 ── *📝 NOTA* ╏
-💬 ➛ Contacta solo para cosas importantes
+💬 ➛ Contacta solo para cosas importantes pe
+🍓 ➛ Andreitap'
 
 ━━━━━━━━━━━`
         await react('✅')
@@ -32,16 +34,17 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
     // PING
     if (command === 'ping' || command === 'p') {
         let start = new Date * 1
-        await conn.reply(m.chat, `𐔌 ꒱ ***PING*** 𐔌 ꒱ ⏳\n\n── *📊 ESTADO* ╏\n⏳ ➛ Calculando...`, m)
+        await conn.reply(m.chat, `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***PING*** 𐔌 ꒱ ⏳\n\n── *📊 ESTADO* ╏\n⏳ ➛ Calculando pe...`, m)
         let end = new Date * 1
         let speed = end - start
-        let texto = `𐔌 ꒱ ***PING*** 𐔌 ꒱ ✅
+        let texto = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***PING*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`VELOCIDAD\`\` —˙𖦹.📡꒷
 
 ── *📊 ESTADÍSTICAS* ╏
-📡 ➛ Velocidad: ${speed}ms
-✅ ➛ Estado: Activo
+📡 ➛ Velocidad: ${speed}ms pe
+✅ ➛ Estado: Activo 🍓
 
 ── *📝 NOTA* ╏
 🌐 ➛ Servidor estable
@@ -56,16 +59,17 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
         if (fs.existsSync(tmpPath)) {
             fs.readdirSync(tmpPath).forEach(file => fs.unlinkSync(`${tmpPath}/${file}`))
         }
-        let texto = `𐔌 ꒱ ***LIMPIEZA*** 𐔌 ꒱ ✅
+        let texto = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***LIMPIEZA*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`CACHE\`\` —˙𖦹.🗑️꒷
 
 ── *📊 RESULTADO* ╏
-🗑️ ➛ Caché temporal eliminado
+🗑️ ➛ Caché temporal eliminado pe
 💾 ➛ Memoria liberada con éxito
 
 ── *📝 NOTA* ╏
-✅ ➛ El bot está más ligero
+✅ ➛ El bot está más ligero 🍓
 
 ━━━━━━━━━━━`
         await react('✅')
@@ -74,12 +78,13 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 
     if (command === 'cpu') {
         let cpu = os.loadavg()[0].toFixed(2)
-        let texto = `𐔌 ꒱ ***CPU*** 𐔌 ꒱ ✅
+        let texto = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***CPU*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`PROCESADOR\`\` —˙𖦹.💻꒷
 
 ── *📊 ESTADÍSTICAS* ╏
-💻 ➛ Carga CPU: ${cpu}%
+💻 ➛ Carga CPU: ${cpu}% pe
 
 ── *📝 NOTA* ╏
 ⚠️ ➛ Si supera 90% el bot va lento
@@ -92,12 +97,13 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
     if (command === 'ram') {
         const used = process.memoryUsage()
         let ram = (used.heapUsed / 1024 / 1024).toFixed(2)
-        let texto = `𐔌 ꒱ ***RAM*** 𐔌 ꒱ ✅
+        let texto = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***RAM*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`MEMORIA\`\` —˙𖦹.💾꒷
 
 ── *📊 ESTADÍSTICAS* ╏
-💾 ➛ Consumo RAM: ${ram} MB
+💾 ➛ Consumo RAM: ${ram} MB pe
 
 ── *📝 NOTA* ╏
 📊 ➛ Memoria usada por el proceso
@@ -110,15 +116,16 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
     if (command === 'uptime') {
         let _uptime = process.uptime() * 1000
         let uptime = clockString(_uptime)
-        let texto = `𐔌 ꒱ ***UPTIME*** 𐔌 ꒱ ✅
+        let texto = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***UPTIME*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`TIEMPO ACTIVO\`\` —˙𖦹.⏱️꒷
 
 ── *📊 ESTADÍSTICAS* ╏
-⏱️ ➛ Tiempo activo: ${uptime}
+⏱️ ➛ Tiempo activo: ${uptime} pe
 
 ── *📝 NOTA* ╏
-🔄 ➛ Desde que se inició el bot
+🔄 ➛ Desde que se inició el bot 🍓
 
 ━━━━━━━━━━━`
         await react('✅')
@@ -132,18 +139,19 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
         let cpu = os.loadavg()[0].toFixed(2)
         let ram = (used.heapUsed / 1024 / 1024).toFixed(2)
 
-        let texto = `𐔌 ꒱ ***INFO DEL SISTEMA*** 𐔌 ꒱ ✅
+        let texto = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***INFO DEL SISTEMA*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`REPORTE COMPLETO\`\` —˙𖦹.📊꒷
 
 ── *📊 ESTADÍSTICAS* ╏
-⏱️ ➛ Uptime: ${muptime}
+⏱️ ➛ Uptime: ${muptime} pe
 💾 ➛ Memoria RAM: ${ram} MB
 💻 ➛ Carga CPU: ${cpu}%
 
 ── *📝 DETALLES* ╏
-👑 ➛ Desarrollado por: Sebastián Barboza
-✅ ➛ Estado: Operativo
+👑 ➛ Desarrollado por: Andreitap'
+✅ ➛ Estado: Operativo 🍓
 
 ━━━━━━━━━━━`
         await react('✅')
@@ -156,12 +164,13 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 
         if (!txt) {
             await react('❌')
-            let texto = `𐔌 ꒱ ***TTS*** 𐔌 ꒱ ⚠️
+            let texto = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***TTS*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷
 
 ── *📖 USO* ╏
-➛ Escribe el texto que deseas convertir
+➛ Escribe el texto que deseas convertir pe
 ➛ O responde a un mensaje
 
 ── *💡 EJEMPLO* ╏
@@ -185,16 +194,16 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 
         await new Promise((resolve, reject) => {
             ffmpeg(url)
-        .audioCodec('libopus')
-        .toFormat('opus')
-        .outputOptions([
+       .audioCodec('libopus')
+       .toFormat('opus')
+       .outputOptions([
                     '-avoid_negative_ts make_zero',
                     '-ac 1',
                     '-b:a 64k'
                 ])
-        .on('end', () => resolve(true))
-        .on('error', (err) => reject(err))
-        .save(tmpFilePath)
+       .on('end', () => resolve(true))
+       .on('error', (err) => reject(err))
+       .save(tmpFilePath)
         })
 
         let audioBuffer = fs.readFileSync(tmpFilePath)
