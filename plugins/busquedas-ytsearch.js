@@ -11,12 +11,13 @@ let handler = async (m, { conn, text }) => {
 
     if (!text) {
         await react('❌')
-        let error = `𐔌 ꒱ ***YOUTUBE SEARCH*** 𐔌 ꒱ ⚠️
+        let error = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***YOUTUBE SEARCH*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷
 
 ── *📝 AVISO* ╏
-❌ ➛ ¿Qué deseas buscar en YouTube?
+❌ ➛ ¿Qué deseas buscar en YouTube pe?
 
 ── *💡 EJEMPLO* ╏
 ➛ ytsearch Bad Bunny
@@ -26,7 +27,8 @@ let handler = async (m, { conn, text }) => {
     }
 
     await react('🔍')
-    await m.reply(`𐔌 ꒱ ***YOUTUBE SEARCH*** 𐔌 ꒱ ⏳
+    await m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***YOUTUBE SEARCH*** 𐔌 ꒱ ⏳
 
 .⃟𖥔 ݁. 𖦹˙— \`\`BUSCANDO\`\` —˙𖦹.📺꒷
 
@@ -38,15 +40,16 @@ let handler = async (m, { conn, text }) => {
 
     try {
         let { data } = await axios.get(`https://api.stellarwa.xyz/search/yt?query=${encodeURIComponent(text)}&key=${APIKEY}`)
-        
+
         if (!data.status ||!data.result || data.result.length === 0) {
             await react('❌')
-            let vacio = `𐔌 ꒱ ***YOUTUBE SEARCH*** 𐔌 ꒱ 📭
+            let vacio = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***YOUTUBE SEARCH*** 𐔌 ꒱ 📭
 
 .⃟𖥔 ݁. 𖦹˙— \`\`SIN RESULTADOS\`\` —˙𖦹.❌꒷
 
 ── *📝 AVISO* ╏
-📭 ➛ No se encontraron resultados para: *${text}*
+📭 ➛ No se encontraron resultados para: *${text}* pe
 
 ━━━━━━━━━━━`
             return conn.sendMessage(m.chat, { text: vacio }, { quoted: m })
@@ -60,7 +63,8 @@ let handler = async (m, { conn, text }) => {
 👤 ➛ Canal: *${v.author}*
 🔗 ➛ ${v.url}`).join('\n\n')
 
-        let caption = `𐔌 ꒱ ***YOUTUBE SEARCH*** 𐔌 ꒱ ✅
+        let caption = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***YOUTUBE SEARCH*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`TOP 5 RESULTADOS\`\` —˙𖦹.📺꒷
 
@@ -85,12 +89,13 @@ ${res}
     } catch (e) { 
         console.error(e)
         await react('❌')
-        let error = `𐔌 ꒱ ***YOUTUBE SEARCH*** 𐔌 ꒱ ⚠️
+        let error = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***YOUTUBE SEARCH*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷
 
 ── *📝 AVISO* ╏
-❌ ➛ Error al conectar con StellarWA
+❌ ➛ Error al conectar con StellarWA pe
 🔧 ➛ Intenta más tarde
 
 ━━━━━━━━━━━`
