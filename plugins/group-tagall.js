@@ -7,7 +7,7 @@ const handler = async (m, { isOwner, isAdmin, conn, participants, args }) => {
     if (!(isAdmin || isOwner)) {
       await react('❌')
       return conn.sendMessage(m.chat, {
-        text: `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n❌ ➛ Solo admins pueden usar este comando\n━━━━━━━━━━━`
+        text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***ADMINISTRACIÓN*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n❌ ➛ Solo admins pueden usar este comando pe\n━━━━━━━━━━━`
       }, { quoted: m })
     }
 
@@ -15,7 +15,6 @@ const handler = async (m, { isOwner, isAdmin, conn, participants, args }) => {
     const groupMetadata = await conn.groupMetadata(m.chat).catch(() => ({ subject: 'Grupo', participants: [] }))
     const groupName = groupMetadata.subject
 
-    // Lista de banderas por prefijo
     const countryFlags = [
       { prefijo: '502', bandera: '🇬🇹' }, { prefijo: '503', bandera: '🇸🇻' },
       { prefijo: '504', bandera: '🇭🇳' }, { prefijo: '505', bandera: '🇳🇮' },
@@ -48,7 +47,6 @@ const handler = async (m, { isOwner, isAdmin, conn, participants, args }) => {
       return '🚩'
     }
 
-    // Agrupar participantes por bandera
     const grouped = {}
     for (const mem of participants) {
       const flag = getCountryFlag(mem)
@@ -56,18 +54,17 @@ const handler = async (m, { isOwner, isAdmin, conn, participants, args }) => {
       grouped[flag].push(mem)
     }
 
-    // Ordenar las banderas según el orden definido
     const orderedFlags = countryFlags.map(c => c.bandera).concat(['🚩'])
 
-    // TU IMAGEN
-    const catalogoImg = { url: 'https://files.evogb.win/QFXQtu.jpg' }
+    const catalogoImg = { url: 'https://files.evogb.win/iWTUtX.jpg' }
 
-    let messageText = `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ 📢
+    let messageText = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***INVOCACIÓN GENERAL*** 𐔌 ꒱ 📢
 
-.⃟𖥔 ݁. 𖦹˙— \`\`INVOCACIÓN GENERAL\`\` —˙𖦹.📢꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`TAG ALL\`\` —˙𖦹.🍓꒷
 
 ── *📊 INFORMACIÓN* ╏
-👥 ➛ Grupo: *${groupName}*
+👥 ➛ Grupo: *${groupName}* pe
 👤 ➛ Integrantes: *${participants.length}*
 💬 ➛ Mensaje: *${customMessage}*
 
@@ -86,7 +83,7 @@ const handler = async (m, { isOwner, isAdmin, conn, participants, args }) => {
 
     messageText += `
 ── *📝 NOTA* ╏
-📢 ➛ Todos fueron mencionados
+📢 ➛ Todos fueron mencionados pe
 
 ━━━━━━━━━━━`
 
@@ -101,12 +98,13 @@ const handler = async (m, { isOwner, isAdmin, conn, participants, args }) => {
   } catch (error) {
     console.error("[ERROR EN TODOS]:", error)
     await react('❌')
-    let errorMsg = `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ ⚠️
+    let errorMsg = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***INVOCACIÓN*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷
 
 ── *📝 AVISO* ╏
-❌ ➛ Ocurrió un error al ejecutar el comando
+❌ ➛ Ocurrió un error al ejecutar el comando pe
 
 ━━━━━━━━━━━`
     conn.sendMessage(m.chat, { text: errorMsg }, { quoted: m })
