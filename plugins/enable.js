@@ -10,12 +10,13 @@ let handler = async (m, { conn, command, args, isOwner, isAdmin, isROwner }) => 
 
   if (!args[0]) {
     await react('❌')
-    let error = `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ ⚠️
+    let error = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***CONFIGURACIÓN*** 𐔌 ꒱ ⚠️
 
-.⃟𖥔 ݁. 𖦹˙— \`\`CONFIGURACIÓN\`\` —˙𖦹.⚙️꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.⚙️꒷
 
 ── *📝 AVISO* ╏
-❌ ➛ Falta activar o desactivar
+❌ ➛ Falta activar o desactivar pe
 
 ── *💡 USO* ╏
 ➛ welcome on / off
@@ -29,42 +30,42 @@ let handler = async (m, { conn, command, args, isOwner, isAdmin, isROwner }) => 
   let fail = false
   switch (type) {
     case 'welcome': case 'bienvenida':
-      if (m.isGroup &&!isAdmin) { await react('🔒'); return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo admins\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
+      if (m.isGroup &&!isAdmin) { await react('🔒'); return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo admins pe\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
       chat.bienvenida = isEnable
       break
     case 'subbots': case 'serbot':
-      if (!isROwner) { await react('🔒'); return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo Owner\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
+      if (!isROwner) { await react('🔒'); return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo Owner pe\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
       bot.jadibotmd = isEnable
       break
     case 'antispam':
-      if (!isOwner) { await react('🔒'); return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo Owner\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
+      if (!isOwner) { await react('🔒'); return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo Owner pe\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
       bot.antiSpam = isEnable
       break
     case 'antilink':
-      if (m.isGroup &&!isAdmin) { await react('🔒'); return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo admins\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
+      if (m.isGroup &&!isAdmin) { await react('🔒'); return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo admins pe\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
       chat.antiLink = isEnable
       break
     case 'antibot':
-      if (m.isGroup &&!isAdmin) { await react('🔒'); return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo admins\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
+      if (m.isGroup &&!isAdmin) { await react('🔒'); return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo admins pe\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
       chat.antiBot = isEnable
       break
     case 'modoadmin':
-      if (m.isGroup &&!isAdmin) { await react('🔒'); return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo admins\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
+      if (m.isGroup &&!isAdmin) { await react('🔒'); return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo admins pe\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
       chat.modoadmin = isEnable
       break
     case 'nsfw': case 'antinopor':
-      if (m.isGroup &&!isAdmin) { await react('🔒'); return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo admins\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
+      if (m.isGroup &&!isAdmin) { await react('🔒'); return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo admins pe\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
       chat.nsfw = isEnable
       break
     case 'audios':
       chat.audios = isEnable
       break
     case 'autoread': case 'autoleer':
-      if (!isROwner) { await react('🔒'); return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo Owner\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
+      if (!isROwner) { await react('🔒'); return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo Owner pe\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
       global.opts['autoread'] = isEnable
       break
     case 'antiprivado':
-      if (!isOwner) { await react('🔒'); return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo Owner\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
+      if (!isOwner) { await react('🔒'); return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🔒\n\n── *📝 AVISO* ╏\n🔒 ➛ Solo Owner pe\n━━━━━━━━━━━` }, { quoted: m }); fail = true; break }
       bot.antiPrivate = isEnable
       break
     default:
@@ -74,19 +75,19 @@ let handler = async (m, { conn, command, args, isOwner, isAdmin, isROwner }) => 
   if (fail) return
   await react(isEnable? '🟢' : '🔴')
 
-  // IMAGEN FIJA QUE ME DISTE
-  let catalogoImg = { url: 'https://files.evogb.win/QFXQtu.jpg' }
+  let catalogoImg = { url: 'https://files.evogb.win/iWTUtX.jpg' }
 
   let estadoTexto = isEnable? 'Activado' : 'Desactivado'
   let estadoEmoji = isEnable? '🟢' : '🔴'
 
-  let statusTxt = `𐔌 ꒱ ***GARFIEL BOT*** 𐔌 ꒱ ✅
+  let statusTxt = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***CONFIGURACIÓN*** 𐔌 ꒱ ✅
 
-.⃟𖥔 ݁. 𖦹˙— \`\`CONFIGURACIÓN\`\` —˙𖦹.⚙️꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`ESTADO\`\` —˙𖦹.⚙️꒷
 
-── *📊 ESTADO* ╏
+── *📊 INFORMACIÓN* ╏
 ⚙️ ➛ Función: *${type}*
-${estadoEmoji} ➛ Estado: *${estadoTexto}*
+${estadoEmoji} ➛ Estado: *${estadoTexto}* pe
 👑 ➛ Por: @${m.sender.split('@')[0]}
 
 ━━━━━━━━━━━`
