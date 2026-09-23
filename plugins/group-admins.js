@@ -5,7 +5,8 @@ const handler = async (m, { conn, command }) => {
 
   if (!m.mentionedJid[0] &&!m.quoted) {
     await react('❌')
-    let texto = `𐔌 ꒱ ***ADMINISTRACIÓN*** 𐔌 ꒱ ⚠️
+    let texto = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***ADMINISTRACIÓN*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FORMATO\`\` —˙𖦹.👑꒷
 
@@ -18,7 +19,7 @@ const handler = async (m, { conn, command }) => {
 ➛ demote @user
 
 ── *📝 AVISO* ╏
-🔒 ➛ Solo admins
+🔒 ➛ Solo admins pe
 
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: texto }, { quoted: m })
@@ -33,12 +34,13 @@ const handler = async (m, { conn, command }) => {
     await conn.groupParticipantsUpdate(m.chat, [user], action)
   } catch {
     await react('❌')
-    let error = `𐔌 ꒱ ***ADMINISTRACIÓN*** 𐔌 ꒱ ⚠️
+    let error = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***ADMINISTRACIÓN*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷
 
 ── *📝 AVISO* ╏
-❌ ➛ No se pudo completar la acción
+❌ ➛ No se pudo completar la acción pe
 🔒 ➛ Verifica permisos del bot
 
 ━━━━━━━━━━━`
@@ -46,21 +48,23 @@ const handler = async (m, { conn, command }) => {
   }
 
   let msgAccion = action === 'promote'
-? `𐔌 ꒱ ***ADMINISTRACIÓN*** 𐔌 ꒱ ✅
+? `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***ADMINISTRACIÓN*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`PROMOVIDO\`\` —˙𖦹.👑꒷
 
 ── *📊 INFORMACIÓN* ╏
-👑 ➛ Nuevo Admin: @${user.split('@')[0]}
+👑 ➛ Nuevo Admin: @${user.split('@')[0]} pe
 👤 ➛ Por: @${m.sender.split('@')[0]}
 
 ━━━━━━━━━━━`
-    : `𐔌 ꒱ ***ADMINISTRACIÓN*** 𐔌 ꒱ ✅
+    : `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***ADMINISTRACIÓN*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`DEGRADADO\`\` —˙𖦹.📉꒷
 
 ── *📊 INFORMACIÓN* ╏
-📉 ➛ Ya no es Admin: @${user.split('@')[0]}
+📉 ➛ Ya no es Admin: @${user.split('@')[0]} pe
 👤 ➛ Por: @${m.sender.split('@')[0]}
 
 ━━━━━━━━━━━`
