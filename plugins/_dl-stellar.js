@@ -9,7 +9,7 @@ const react = async (conn, m, text) => {
 
 const getBuffer = async (url) => {
     const res = await fetch(url)
-    if(!res.ok) throw new Error('No se pudo descargar el buffer')
+    if(!res.ok) throw new Error('No se pudo descargar el buffer pe 🍓')
     return Buffer.from(await res.arrayBuffer())
 }
 
@@ -18,7 +18,8 @@ let handler = async (m, { conn, command }) => {
     text = text.replace(`.${command}`, '').trim()
 
     if (!text) {
-        return conn.sendMessage(m.chat, { text: `𐔌 ꒱ ***.descargas*** 𐔌 ꒱ 🎵
+        return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.descargas*** 𐔌 ꒱ 🎵
 
 .⃟𖥔 ݁. 𖦹˙— \`\`USO\`\` —˙𖦹.📥꒷
 
@@ -33,47 +34,72 @@ let handler = async (m, { conn, command }) => {
     try {
         // ===== YOUTUBE MP3 =====
         if (command === 'play1') {
-            await m.reply(`𐔌 ꒱ ***.play1*** 𐔌 ꒱ ⏳\nBuscando y descargando...`)
+            await m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.play1*** 𐔌 ꒱ ⏳
+
+.⃟𖥔 ݁. 𖦹˙— \`\`DESCARGANDO\`\` —˙𖦹.🔍꒷
+
+── *📊 ESTADO* ╏
+🔍 ➛ Buscando: *${text.slice(0,40)}*
+📥 ➛ Descargando audio...
+
+━━━━━━━━━━━`)
             const searchResult = await ytsearch(text)
-            if (!searchResult.videos.length) throw new Error("No se encontró la canción.")
+            if (!searchResult.videos.length) throw new Error("No se encontró la canción pe 🍓")
             const video = searchResult.videos[0]
 
             const apiUrl = `${api.url}/dl/ytmp3?url=${encodeURIComponent(video.url)}&key=${api.key}`
             const resDl = await fetch(apiUrl).then(r => r.json())
             const dl = resDl?.data?.dl || resDl?.data?.download
-            if (!dl) throw new Error('No se pudo descargar el audio de YT')
+            if (!dl) throw new Error('No se pudo descargar el audio de YT pe 🍓')
 
             const audioBuffer = await getBuffer(dl)
             await react(conn, m, '📥')
-            await conn.sendMessage(m.chat, { 
-                audio: audioBuffer, 
-                mimetype: 'audio/mpeg', 
+            await conn.sendMessage(m.chat, {
+                audio: audioBuffer,
+                mimetype: 'audio/mpeg',
                 fileName: `${video.title}.mp3`
             }, { quoted: m })
         }
 
         // ===== TIKTOK MP3 =====
         if (command === 'ttmp3') {
-            await m.reply(`𐔌 ꒱ ***.ttmp3*** 𐔌 ꒱ ⏳\nDescargando audio de TikTok...`)
+            await m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.ttmp3*** 𐔌 ꒱ ⏳
+
+.⃟𖥔 ݁. 𖦹˙— \`\`DESCARGANDO\`\` —˙𖦹.🎵꒷
+
+── *📊 ESTADO* ╏
+🎵 ➛ Descargando audio de TikTok...
+
+━━━━━━━━━━━`)
             const apiUrl = `${api.url}/dl/tiktokmp3?url=${encodeURIComponent(text)}&key=${api.key}`
             const res = await fetch(apiUrl).then(r => r.json())
             const data = res?.data || res?.result
             let dl = data?.download || data?.dl || data?.music
             const title = data?.title || 'TikTok'
-            if (!dl) throw new Error('No se pudo descargar. Link mal o privado')
+            if (!dl) throw new Error('No se pudo descargar. Link mal o privado pe 🍓')
 
             const audioBuffer = await getBuffer(dl)
             await react(conn, m, '📥')
-            await conn.sendMessage(m.chat, { 
-                audio: audioBuffer, 
-                mimetype: 'audio/mpeg', 
-                fileName: `${title}.mp3` 
+            await conn.sendMessage(m.chat, {
+                audio: audioBuffer,
+                mimetype: 'audio/mpeg',
+                fileName: `${title}.mp3`
             }, { quoted: m })
         }
 
         // ===== FACEBOOK VIDEO =====
         if (command === 'fb' || command === 'facebook') {
-            await m.reply(`𐔌 ꒱ ***.fb*** 𐔌 ꒱ ⏳\nDescargando de Facebook...`)
+            await m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***.fb*** 𐔌 ꒱ ⏳
+
+.⃟𖥔 ݁. 𖦹˙— \`\`DESCARGANDO\`\` —˙𖦹.📥꒷
+
+── *📊 ESTADO* ╏
+📥 ➛ Descargando de Facebook...
+
+━━━━━━━━━━━`)
             const apiUrl = `${api.url}/dl/facebook?url=${encodeURIComponent(text)}&key=${api.key}`
             const res = await fetch(apiUrl)
 
@@ -88,9 +114,9 @@ let handler = async (m, { conn, command }) => {
             }
 
             await react(conn, m, '📥')
-            await conn.sendMessage(m.chat, { 
-                video: videoBuffer, 
-                caption: `✅ Descargado\n⬇️ Andreitap Ventas 💗` 
+            await conn.sendMessage(m.chat, {
+                video: videoBuffer,
+                caption: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 ✅\n\n⬇️ Descargado con éxito pe 🍓`
             }, { quoted: m })
         }
 
@@ -98,12 +124,12 @@ let handler = async (m, { conn, command }) => {
     } catch (e) {
         await react(conn, m, '❌')
         console.log("ERROR:", e)
-        return conn.sendMessage(m.chat, { text: `❌ Error: ${e.message}` }, { quoted: m })
+        return conn.sendMessage(m.chat, { text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 ⚠️\n\n❌ Error: ${e.message} pe` }, { quoted: m })
     }
 }
 
 handler.help = ['play1 <nombre>', 'ttmp3 <link>', 'fb <link>']
 handler.tags = ['descargas']
-handler.command = /^(play1|ttmp3|fb|facebook)$/i  // <-- ya solo ttmp3
+handler.command = /^(play1|ttmp3|fb|facebook)$/i
 handler.register = false
 export default handler
