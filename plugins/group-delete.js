@@ -5,12 +5,13 @@ let handler = async (m, { conn }) => {
 
   if (!m.quoted) {
     await react('❌')
-    let error = `𐔌 ꒱ ***ELIMINAR MENSAJE*** 𐔌 ꒱ ⚠️
+    let error = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***ELIMINAR MENSAJE*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷
 
 ── *📝 AVISO* ╏
-❌ ➛ Responde al mensaje que deseas eliminar
+❌ ➛ Responde al mensaje que deseas eliminar pe
 
 ── *💡 EJEMPLO* ╏
 ➛ Responde a un mensaje + comando
@@ -29,12 +30,13 @@ let handler = async (m, { conn }) => {
     await conn.sendMessage(m.chat, { delete: m.quoted.vM.key })
   }
 
-  let ok = `𐔌 ꒱ ***ELIMINAR MENSAJE*** 𐔌 ꒱ ✅
+  let ok = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***ELIMINAR MENSAJE*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ELIMINADO\`\` —˙𖦹.🗑️꒷
 
 ── *📊 INFORMACIÓN* ╏
-🗑️ ➛ Mensaje eliminado
+🗑️ ➛ Mensaje eliminado pe
 👤 ➛ Por: @${m.sender.split('@')[0]}
 
 ━━━━━━━━━━━`
