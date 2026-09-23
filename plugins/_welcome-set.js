@@ -19,7 +19,8 @@ let handler = async (m, { conn, args }) => {
   if (textoCmd.startsWith('set')) {
     await react('📝')
     if (!text) {
-      let uso = `𐔌 ꒱ ***MENSAJE ${type.toUpperCase()}*** 𐔌 ꒱ 📝
+      let uso = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***MENSAJE ${type.toUpperCase()}*** 𐔌 ꒱ 📝
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FORMATO\`\` —˙𖦹.✏️꒷
 
@@ -39,12 +40,13 @@ let handler = async (m, { conn, args }) => {
     }
 
     chat[key] = text
-    let ok = `𐔌 ꒱ ***MENSAJE ${type.toUpperCase()}*** 𐔌 ꒱ ✅
+    let ok = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***MENSAJE ${type.toUpperCase()}*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`GUARDADO\`\` —˙𖦹.📝꒷
 
 ── *📊 INFORMACIÓN* ╏
-✅ ➛ Mensaje de *${type}* guardado
+✅ ➛ Mensaje de *${type}* guardado pe
 
 ── *📝 VISTA PREVIA* ╏
 💬 ➛ ${text}
@@ -57,24 +59,26 @@ let handler = async (m, { conn, args }) => {
   if (textoCmd.startsWith('del')) {
     await react('🗑️')
     if (!chat[key]) {
-      let vacio = `𐔌 ꒱ ***MENSAJE ${type.toUpperCase()}*** 𐔌 ꒱ 📭
+      let vacio = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***MENSAJE ${type.toUpperCase()}*** 𐔌 ꒱ 📭
 
 .⃟𖥔 ݁. 𖦹˙— \`\`NO CONFIGURADO\`\` —˙𖦹.❌꒷
 
 ── *📝 AVISO* ╏
-📭 ➛ No hay un mensaje de *${type}* personalizado
+📭 ➛ No hay un mensaje de *${type}* personalizado pe
 
 ━━━━━━━━━━━`
       return conn.sendMessage(m.chat, { text: vacio }, { quoted: m })
     }
 
     delete chat[key]
-    let del = `𐔌 ꒱ ***MENSAJE ${type.toUpperCase()}*** 𐔌 ꒱ ✅
+    let del = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***MENSAJE ${type.toUpperCase()}*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ELIMINADO\`\` —˙𖦹.🗑️꒷
 
 ── *📊 INFORMACIÓN* ╏
-🗑️ ➛ Mensaje de *${type}* eliminado
+🗑️ ➛ Mensaje de *${type}* eliminado pe
 ✅ ➛ Volverá al mensaje por defecto
 
 ━━━━━━━━━━━`
