@@ -20,14 +20,14 @@ const handler = async (m, { conn, text }) => {
   try {
     let userId = m.sender
     let packstickers = global.db.data.users[userId] || {}
-    let texto1 = packstickers.text1 || global.packsticker
-    let texto2 = packstickers.text2 || global.packsticker2
+    let texto1 = packstickers.text1 || '🍓 STRAWBERRY BOT'
+    let texto2 = packstickers.text2 || 'Andreitap'
 
     text = m.quoted?.text || text
     if (!text) {
       await react('❌')
       return conn.sendMessage(m.chat, {
-        text: `𐔌 ꒱ ***BRATV*** 𐔌 ꒱ ⚠️\n\n── *📖 USO* ╏\n➛ Responde a un mensaje o escribe texto\n➛ Ejemplo:.bratv Hola\n━━━━━━━━━━━`
+        text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***BRATV*** 𐔌 ꒱ ⚠️\n\n── *📖 USO* ╏\n➛ Responde a un mensaje o escribe texto pe\n➛ Ejemplo:.bratv Hola\n━━━━━━━━━━━`
       }, { quoted: m })
     }
 
@@ -40,7 +40,7 @@ const handler = async (m, { conn, text }) => {
   } catch (e) {
     await react('❌')
     conn.sendMessage(m.chat, {
-      text: `𐔌 ꒱ ***BRATV*** 𐔌 ꒱ ⚠️\n\n.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷\n\n── *📝 AVISO* ╏\n❌ ➛ Se produjo un problema\n💡 ➛ Usa report para informarlo\n── *📊 DETALLE* ╏\n\`\`${e.message}\`\n━━━━━━━━━━━`
+      text: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***BRATV*** 𐔌 ꒱ ⚠️\n\n.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷\n\n── *📝 AVISO* ╏\n❌ ➛ Se produjo un problema pe\n💡 ➛ Usa report para informarlo\n── *📊 DETALLE* ╏\n\`\`${e.message}\`\n━━━━━━━━━━━`
     }, { quoted: m })
   }
 }
