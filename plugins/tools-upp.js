@@ -1,3 +1,4 @@
+
 import crypto from "crypto"
 import { FormData, Blob } from "formdata-node"
 import { fileTypeFromBuffer } from "file-type"
@@ -11,12 +12,12 @@ let handler = async (m, { conn }) => {
   let mime = (q.msg || q).mimetype || ''
   if (!mime) {
     await react('❌')
-    return conn.reply(m.chat, `𐔌 ꒱ ***UPLOADER*** 𐔌 ꒱ ⚠️
+    return conn.reply(m.chat, `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***UPLOADER*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`USO\`\` —˙𖦹.☁️꒷
 
 ── *📖 COMO USAR* ╏
-➛ Responde a una *imagen, video, audio o documento*
+➛ Responde a una *imagen, video, audio o documento* pe
 ➛ Formatos: Imagen | Video | Audio | Doc
 
 ━━━━━━━━━━━`, m)
@@ -24,12 +25,12 @@ let handler = async (m, { conn }) => {
 
   try {
     await react('⏳')
-    await m.reply(`𐔌 ꒱ ***UPLOADER*** 𐔌 ꒱ ⏳
+    await m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***UPLOADER*** 𐔌 ꒱ ⏳
 
 .⃟𖥔 ݁. 𖦹˙— \`\`SUBIENDO\`\` —˙𖦹.☁️꒷
 
 ── *📊 ESTADO* ╏
-⏳ ➛ Subiendo archivo a la nube...
+⏳ ➛ Subiendo archivo a la nube... 🍓
 
 ━━━━━━━━━━━`)
 
@@ -37,7 +38,7 @@ let handler = async (m, { conn }) => {
     let link = await myCloud(media)
     if (!link.url) throw new Error()
 
-    let txt = `𐔌 ꒱ ***UPLOADER*** 𐔌 ꒱ ✅
+    let txt = `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***UPLOADER*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` —˙𖦹.☁️꒷
 
@@ -54,13 +55,13 @@ let handler = async (m, { conn }) => {
   } catch (e) {
     console.error(e)
     await react('❌')
-    await conn.reply(m.chat, `𐔌 ꒱ ***UPLOADER*** 𐔌 ꒱ ⚠️
+    await conn.reply(m.chat, `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***UPLOADER*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷
 
 ── *📝 AVISO* ╏
-❌ ➛ No se pudo subir el archivo
-💡 ➛ Intenta con otro archivo
+❌ ➛ No se pudo subir el archivo pe
+💡 ➛ Intenta con otro archivo 🍓
 
 ━━━━━━━━━━━`, m)
   }
