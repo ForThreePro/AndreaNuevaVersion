@@ -7,7 +7,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
     }
 
     const error = (msg) => {
-        return m.reply(`𐔌 ꒱ ***STICKERS*** 𐔌 ꒱ ⚠️\n\n.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷\n\n── *📝 AVISO* ╏\n❌ ➛ ${msg}\n━━━━━━━━━━━`)
+        return m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***STICKERS*** 𐔌 ꒱ ⚠️\n\n.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷\n\n── *📝 AVISO* ╏\n❌ ➛ ${msg} pe\n━━━━━━━━━━━`)
     }
 
     await react('⏳')
@@ -23,7 +23,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
         if (!img) return error('Responde a un *sticker*')
 
         try {
-            let stiker = await addExif(img, packname || 'Sticker', author || '')
+            let stiker = await addExif(img, packname || '🍓 STRAWBERRY BOT', author || 'Andreitap')
             await conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
             await react('✅')
         } catch (e) {
@@ -39,7 +39,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
         let mime = (q.msg || q).mimetype || q.mediaType || ''
         if (!/webp|image|video/g.test(mime)) return error('Responde a una *imagen, video o gif*')
         let img = await q.download()
-        let stiker = await sticker(img, false, 'Sticker', '')
+        let stiker = await sticker(img, false, '🍓 STRAWBERRY BOT', 'Andreitap')
         await conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
         await react('✅')
     }
@@ -95,7 +95,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
         try {
             const json = await axios.post('https://btzqc.betabotz.eu.org/generate', obj, { headers: { 'Content-Type': 'application/json' }})
             const buffer = Buffer.from(json.data.result.image, 'base64')
-            const stiker = await sticker(buffer, false, 'Sticker', 'Bot')
+            const stiker = await sticker(buffer, false, '🍓 STRAWBERRY BOT', 'Andreitap')
 
             if (stiker) {
                 await conn.sendFile(m.chat, stiker, 'quotly.webp', '', m)
