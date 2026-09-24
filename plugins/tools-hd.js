@@ -1,3 +1,4 @@
+
 import fetch from 'node-fetch'
 import FormData from 'form-data'
 
@@ -27,7 +28,7 @@ async function uploadToUguu(buffer, mime) {
 
   const json = await res.json()
   const url = json.files?.[0]?.url
-  if (!url) throw 'No se pudo subir a Uguu'
+  if (!url) throw 'No se pudo subir a Uguu pe'
   return url
 }
 
@@ -48,12 +49,13 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
     if (!mime) {
       await react('❌')
-      return m.reply(`𐔌 ꒱ ***MEJORADOR HD*** 𐔌 ꒱ ⚠️
+      return m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***MEJORADOR HD*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`USO\`\` —˙𖦹.🖼️꒷
 
 ── *📖 COMO USAR* ╏
-➛ Responde a una imagen con: *${usedPrefix + command}*
+➛ Responde a una imagen con: *${usedPrefix + command}* pe
 ➛ Soporta: jpg, jpeg, png
 
 ━━━━━━━━━━━`)
@@ -61,18 +63,20 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
     if (!/image\/(jpe?g|png)/.test(mime)) {
       await react('❌')
-      return m.reply(`𐔌 ꒱ ***MEJORADOR HD*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n⚠️ ➛ El formato *${mime}* no es compatible\n━━━━━━━━━━━`)
+      return m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***MEJORADOR HD*** 𐔌 ꒱ ⚠️\n\n── *📝 AVISO* ╏\n⚠️ ➛ El formato *${mime}* no es compatible pe\n━━━━━━━━━━━`)
     }
 
     try {
       await react('⏳')
-      await m.reply(`𐔌 ꒱ ***MEJORADOR HD*** 𐔌 ꒱ ⏳
+      await m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***MEJORADOR HD*** 𐔌 ꒱ ⏳
 
 .⃟𖥔 ݁. 𖦹˙— \`\`PROCESANDO\`\` —˙𖦹.🖼️꒷
 
 ── *📊 ESTADO* ╏
 ⏳ ➛ Subiendo imagen a Uguu...
-⚡ ➛ Mejorando calidad 2x...
+⚡ ➛ Mejorando calidad 2x... 🍓
 
 ━━━━━━━━━━━`)
 
@@ -82,13 +86,14 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
       await conn.sendMessage(m.chat, {
         image: enhancedBuffer,
-        caption: `𐔌 ꒱ ***MEJORADOR HD*** 𐔌 ꒱ ✅
+        caption: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***MEJORADOR HD*** 𐔌 ꒱ ✅
 
 .⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` —˙𖦹.✨꒷
 
 ── *📊 DETALLES* ╏
-✨ ➛ Calidad: Mejorada 2x
-🔧 ➛ API: Stellar
+✨ ➛ Calidad: Mejorada 2x pe
+🔧 ➛ API: Stellar 🍓
 
 ━━━━━━━━━━━`
       }, { quoted: m })
@@ -97,12 +102,13 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
     } catch (err) {
       await react('❌')
-      await m.reply(`𐔌 ꒱ ***MEJORADOR HD*** 𐔌 ꒱ ⚠️
+      await m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***MEJORADOR HD*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷
 
 ── *📝 AVISO* ╏
-❌ ➛ ${err.message || err}
+❌ ➛ ${err.message || err} pe
 
 ━━━━━━━━━━━`)
     }
