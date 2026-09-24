@@ -7,7 +7,7 @@ let handler = async (m, { conn, command }) => {
   }
 
   const error = (msg) => {
-    return m.reply(`𐔌 ꒱ ***CONVERTIDOR*** 𐔌 ꒱ ⚠️\n\n.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷\n\n── *📝 AVISO* ╏\n❌ ➛ ${msg}\n━━━━━━━━━━━`)
+    return m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***CONVERTIDOR*** 𐔌 ꒱ ⚠️\n\n.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷\n\n── *📝 AVISO* ╏\n❌ ➛ ${msg} pe\n━━━━━━━━━━━`)
   }
 
   // TOVID
@@ -19,7 +19,7 @@ let handler = async (m, { conn, command }) => {
       await react('⏳')
       let media = await m.quoted.download()
       let out = await webp2mp4(media)
-      await conn.sendFile(m.chat, out, 'video.mp4', `𐔌 ꒱ ***CONVERTIDOR*** 𐔌 ꒱ ✅\n\n.⃟𖥔 ݁. 𖦹˙— \`\`TOVIDEO\`\` —˙𖦹.🎬꒷\n\n── *📊 ESTADO* ╏\n✅ ➛ Conversión completada\n🎬 ➛ Sticker a Video MP4\n━━━━━━━━━━━`, m)
+      await conn.sendFile(m.chat, out, 'video.mp4', `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***CONVERTIDOR*** 𐔌 ꒱ ✅\n\n.⃟𖥔 ݁. 𖦹˙— \`\`TOVIDEO\`\` —˙𖦹.🎬꒷\n\n── *📊 ESTADO* ╏\n✅ ➛ Conversión completada pe\n🎬 ➛ Sticker a Video MP4\n━━━━━━━━━━━`, m)
       await react('✅')
     } catch {
       await react('❌')
@@ -36,7 +36,7 @@ let handler = async (m, { conn, command }) => {
       await react('⏳')
       let media = await q.download?.()
       let audio = await toAudio(media, 'mp4')
-      await conn.sendFile(m.chat, audio.data, 'audio.mp3', `𐔌 ꒱ ***CONVERTIDOR*** 𐔌 ꒱ ✅\n\n.⃟𖥔 ݁. 𖦹˙— \`\`TOMP3\`\` —˙𖦹.🎵꒷\n\n── *📊 ESTADO* ╏\n✅ ➛ Audio extraído\n🎵 ➛ Formato: MP3\n━━━━━━━━━━━`, m, null, { mimetype: 'audio/mp4' })
+      await conn.sendFile(m.chat, audio.data, 'audio.mp3', `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***CONVERTIDOR*** 𐔌 ꒱ ✅\n\n.⃟𖥔 ݁. 𖦹˙— \`\`TOMP3\`\` —˙𖦹.🎵꒷\n\n── *📊 ESTADO* ╏\n✅ ➛ Audio extraído pe\n🎵 ➛ Formato: MP3\n━━━━━━━━━━━`, m, null, { mimetype: 'audio/mp4' })
       await react('✅')
     } catch {
       await react('❌')
@@ -54,7 +54,7 @@ let handler = async (m, { conn, command }) => {
       let media = await q.download()
       await conn.sendMessage(m.chat, { 
         image: media, 
-        caption: `𐔌 ꒱ ***CONVERTIDOR*** 𐔌 ꒱ ✅\n\n.⃟𖥔 ݁. 𖦹˙— \`\`TOIMG\`\` —˙𖦹.🖼️꒷\n\n── *📊 ESTADO* ╏\n✅ ➛ Conversión completada\n🖼️ ➛ Sticker a Imagen JPG\n━━━━━━━━━━━` 
+        caption: `🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓\n𐔌 ꒱ ***CONVERTIDOR*** 𐔌 ꒱ ✅\n\n.⃟𖥔 ݁. 𖦹˙— \`\`TOIMG\`\` —˙𖦹.🖼️꒷\n\n── *📊 ESTADO* ╏\n✅ ➛ Conversión completada pe\n🖼️ ➛ Sticker a Imagen JPG\n━━━━━━━━━━━` 
       }, { quoted: m })
       await react('✅')
     } catch {
