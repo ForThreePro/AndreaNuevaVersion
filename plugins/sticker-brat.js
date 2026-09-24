@@ -14,12 +14,13 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
   if (!txt) {
     await react('❌')
-    return m.reply(`𐔌 ꒱ ***BRAT*** 𐔌 ꒱ ⚠️
+    return m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***BRAT*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR DE USO\`\` —˙𖦹.⚠️꒷
 
 ── *📖 USO* ╏
-➛ Escribe el texto para generar el sticker
+➛ Escribe el texto para generar el sticker pe
 ➛ Ejemplo: ${usedPrefix}${command} Hola
 
 ━━━━━━━━━━━`)
@@ -33,13 +34,14 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   let response = await fetch(apiUrl)
   if (!response.ok) {
     await react('❌')
-    return m.reply(`𐔌 ꒱ ***BRAT*** 𐔌 ꒱ ⚠️
+    return m.reply(`🍓 𓆩 𝗦𝗧𝗥𝗔𝗪𝗕𝗘𝗥𝗥𝗬 𝗕𝗢𝗧 𓆪 🍓
+𐔌 ꒱ ***BRAT*** 𐔌 ꒱ ⚠️
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` —˙𖦹.❌꒷
 
 ── *📝 AVISO* ╏
-❌ ➛ Error al generar el sticker
-🔄 ➛ Intenta de nuevo
+❌ ➛ Error al generar el sticker pe
+🔄 ➛ Intenta de nuevo 🍓
 
 ━━━━━━━━━━━`)
   }
@@ -74,8 +76,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
   await conn.sendMessage(m.chat, {
     sticker: stickerBuffer,
-    packname: 'Sticker',
-    author: 'Bot'
+    packname: '🍓 STRAWBERRY BOT',
+    author: 'Andreitap'
   }, { quoted: m })
 
   if (fs.existsSync(tmpInput)) fs.unlinkSync(tmpInput)
